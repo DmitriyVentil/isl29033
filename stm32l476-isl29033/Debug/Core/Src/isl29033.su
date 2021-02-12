@@ -1,0 +1,8 @@
+isl29033.c:4:9:ISL29033_RegRead	24	static
+isl29033.c:11:6:ISL29033_RegWrite	32	static
+isl29033.c:17:6:ISL29033_config1	16	static
+isl29033.c:22:6:ISL29033_config2	16	static
+isl29033.c:27:6:ISL29033_Standby	8	static
+isl29033.c:32:6:ISL29033_init	24	static
+isl29033.c:41:10:ISL29033_DataReadADC	16	static
+isl29033.c:46:6:ISL29033_ADCtoLUX	24	static
