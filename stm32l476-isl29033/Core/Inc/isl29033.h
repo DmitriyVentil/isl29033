@@ -13,14 +13,14 @@ extern I2C_HandleTypeDef hi2c3;
 //Регистры
 typedef enum
 {
-	COMMAND_REG1,
-	COMMAND_REG2,
-	DATA_REG1,
-	DATA_REG2,
-	INTERRUPT_REG1,
-	INTERRUPT_REG2,
-	INTERRUPT_REG3,
-	INTERRUPT_REG4
+	COMMAND1_REG,
+	COMMAND2_REG,
+	DATA_LSB_REG,
+	DATA_MSB_REG,
+	INT_LT_LSB_REG,
+	INT_LT_MSB_REG,
+	INT_HT_LSB_REG,
+	INT_HT_MSB_REG
 } ISL29033_Registers;
 //Режимы работы ISL29033
 typedef enum
@@ -56,9 +56,13 @@ typedef enum
 
 // Режим низкого энергопотребления ISL29033
 void ISL29033_Standby(void);
+// Функция установки нижнего и верхнего порога срабатывания прерывания(INT) ISL29033
+void ISL29033_thresholds(uint16_t INT_LT,uint16_t INT_HT);
 // Инициализация ISL29033
 void ISL29033_init(ISL29033_mode mode,ISL29033_NumOfCycles NumOfCycles,
 		           ISL29033_ADCRes ADCRes,ISL29033_LUXrange LUXrange);
+// Очистка флага INT ISL29033
+void ISL29033_Clearflag(void);
 //Чтение значения освещенности ISL29033
 uint16_t ISL29033_DataReadADC(void);
 //Перевод значения из АЦП в Люксы
