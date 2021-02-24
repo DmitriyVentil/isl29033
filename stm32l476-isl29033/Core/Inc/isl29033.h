@@ -33,9 +33,9 @@ typedef enum
 typedef enum
 {
 	CYCLES_1=0x00,
-	CYCLES_1_4=0x01,
-	CYCLES_1_8=0x02,
-	CYCLES_1_16=0x03
+	CYCLES_4=0x01,
+	CYCLES_8=0x02,
+	CYCLES_16=0x03
 } ISL29033_NumOfCycles;
 // Разрешение в битах
 typedef enum

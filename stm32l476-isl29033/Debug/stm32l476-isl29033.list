@@ -39,11 +39,11 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING
  17 .debug_line   00009947  00000000  00000000  00056c5d  2**0
                   CONTENTS, READONLY, DEBUGGING
- 18 .debug_str    000e997c  00000000  00000000  000605a4  2**0
+ 18 .debug_str    000e9976  00000000  00000000  000605a4  2**0
                   CONTENTS, READONLY, DEBUGGING
- 19 .comment      0000007b  00000000  00000000  00149f20  2**0
+ 19 .comment      0000007b  00000000  00000000  00149f1a  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  00003040  00000000  00000000  00149f9c  2**2
+ 20 .debug_frame  00003040  00000000  00000000  00149f98  2**2
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -722,7 +722,7 @@ int main(void)
   MX_I2C3_Init();
  80006f6:	f000 f8bb 	bl	8000870 <MX_I2C3_Init>
   /* USER CODE BEGIN 2 */
-  ISL29033_init(ALS_CONTINUOUS,CYCLES_1_16,RESOLUTION_16b,LUXRANGE_3);
+  ISL29033_init(ALS_CONTINUOUS,CYCLES_16,RESOLUTION_16b,LUXRANGE_3);
  80006fa:	2302      	movs	r3, #2
  80006fc:	2200      	movs	r2, #0
  80006fe:	2103      	movs	r1, #3
