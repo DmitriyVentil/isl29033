@@ -28,9 +28,19 @@
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
-#define Delay_ms16b 100
-#define Delay_ms12b 6
-#define Delay_ms8b  1
+
+#define Resolution 16
+
+#if Resolution == 16
+#define Delay_msb 100
+
+#elif Resolution == 12
+#define Delay_msb 6
+
+#else
+#define Delay_msb  1
+
+#endif
 /* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/
@@ -123,7 +133,7 @@ int main(void)
 	 // ISL29033_ADCtoLUX(Resolution_16b,Luxrange_3,&data);
 	  convert_uint32_to_charArray(data,(uint8_t*)mass,0,6);
 	  HAL_UART_Transmit(&huart2,(uint8_t*)mass,7,10);
-	  HAL_Delay(Delay_ms16b);
+	  HAL_Delay(Delay_msb);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
