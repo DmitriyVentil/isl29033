@@ -29,16 +29,16 @@
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
 
-#define Resolution 16
+#define RESOLUTION 16
 
-#if Resolution == 16
-#define Delay_msb 100
+#if RESOLUTION == 16
+#define DELAY_MSB 100
 
-#elif Resolution == 12
-#define Delay_msb 6
+#elif RESOLUTION == 12
+#define DELAY_MSB 6
 
 #else
-#define Delay_msb  1
+#define DELAY_MSB 1
 
 #endif
 /* USER CODE END PTD */
@@ -113,7 +113,7 @@ int main(void)
   MX_USART2_UART_Init();
   MX_I2C3_Init();
   /* USER CODE BEGIN 2 */
-  ISL29033_init(ALS_continuous,cycles_16,Resolution_16b,Luxrange_3);
+  ISL29033_init(ALS_CONTINUOUS,CYCLES_1_16,RESOLUTION_16b,LUXRANGE_3);
   ISL29033_thresholds(1000,60000);
   uint16_t data=0;
   char mass[7]={"000000\n"};
@@ -133,7 +133,7 @@ int main(void)
 	 // ISL29033_ADCtoLUX(Resolution_16b,Luxrange_3,&data);
 	  convert_uint32_to_charArray(data,(uint8_t*)mass,0,6);
 	  HAL_UART_Transmit(&huart2,(uint8_t*)mass,7,10);
-	  HAL_Delay(Delay_msb);
+	  HAL_Delay(DELAY_MSB);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

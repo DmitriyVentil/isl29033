@@ -26,7 +26,7 @@ void ISL29033_config2(ISL29033_ADCRes ADCRes,ISL29033_LUXrange LUXrange)
 // Режим низкого энергопотребления ISL29033
 void ISL29033_Standby(void)
 {
-	ISL29033_config1(Standby,cycles_1);
+	ISL29033_config1(STANDBY,CYCLES_1);
 }
 // Функция установки нижнего и верхнего порога срабатывания прерывания(INT) ISL29033
 void ISL29033_thresholds(uint16_t INT_LT,uint16_t INT_HT)
@@ -61,16 +61,16 @@ void ISL29033_ADCtoLUX(ISL29033_ADCRes ADCRes,ISL29033_LUXrange LUXrange,uint16_
 {
 	switch(ADCRes)
 	{
-	case  Resolution_16b:
+	case  RESOLUTION_16b:
 		*data=*data*pow(4,LUXrange)*125/65536;
 		break;
-	case  Resolution_12b:
+	case  RESOLUTION_12b:
 		*data=*data*pow(4,LUXrange)*125/4096;
 		break;
-	case  Resolution_8b:
+	case  RESOLUTION_8b:
 		*data=*data*pow(4,LUXrange)*125/256;
 		break;
-	case  Resolution_4b:
+	case  RESOLUTION_4b:
 		*data=*data*pow(4,LUXrange)*125/16;
 		break;
 	}

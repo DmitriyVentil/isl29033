@@ -25,33 +25,33 @@ typedef enum
 //Режимы работы ISL29033
 typedef enum
 {
-	Standby=0x00,
-	ALS_continuous=0xA0,
-	IR_continuous=0xC0
+	STANDBY=0x00,
+	ALS_CONTINUOUS=0xA0,
+	IR_CONTINUOUS=0xC0
 } ISL29033_mode;
 // Количество циклов обработки
 typedef enum
 {
-	cycles_1=0x00,
-	cycles_4=0x01,
-	cycles_8=0x02,
-	cycles_16=0x03
+	CYCLES_1=0x00,
+	CYCLES_1_4=0x01,
+	CYCLES_1_8=0x02,
+	CYCLES_1_16=0x03
 } ISL29033_NumOfCycles;
 // Разрешение в битах
 typedef enum
 {
-	Resolution_16b=0x00,			//16 Бит
-	Resolution_12b=0x04,			//12 бит
-	Resolution_8b=0x08,				// 8 бит
-	Resolution_4b=0x0C				// 4 бита
+	RESOLUTION_16b=0x00,			//16 Бит
+	RESOLUTION_12b=0x04,			//12 бит
+	RESOLUTION_8b=0x08,				// 8 бит
+	RESOLUTION_4b=0x0C				// 4 бита
 } ISL29033_ADCRes;
 // Чувствтительность датчика ISL29033
 typedef enum
 {
-	Luxrange_1=0x00,             	//125 люкс
-	Luxrange_2=0x01,             	//500 люкс
-	Luxrange_3=0x02,            	//2000 люкс
-	Luxrange_4=0x03              	//8000 люкс
+	LUXRANGE_1=0x00,             	//125 люкс
+	LUXRANGE_2=0x01,             	//500 люкс
+	LUXRANGE_3=0x02,            	//2000 люкс
+	LUXRANGE_4=0x03              	//8000 люкс
 } ISL29033_LUXrange;
 
 // Режим низкого энергопотребления ISL29033
